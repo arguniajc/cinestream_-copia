@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | CineEstream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary: #ff6600;
+            --primary-dark: #e65c00;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --light: #f5f5f5;
+            --gray: #333333;
+            --light-gray: #aaaaaa;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(5, 5, 5, 0.9), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(5, 5, 5, 0.9);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+         .logo {
+            color: var(--light);
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .terms-container {
+            background-color: rgba(10, 10, 10, 0.8);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h3 {
+            color: var(--light);
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .section p, .section ul {
+            color: var(--light-gray);
+            margin-left: 1rem;
+        }
+
+        .section ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-container {
+                padding: 1.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Cine<span>Estream</span></a>
+            <nav>
+                <a href="#" class="btn">Volver al sitio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="terms-container">
+                <h1>Términos y Condiciones</h1>
+                <p class="last-updated">Última actualización: 15 de junio, 2023</p>
+                
+                <div class="section">
+                    <h2>1. Introducción</h2>
+                    <p>Bienvenido a CineEstream. Al acceder y utilizar nuestro sitio web, usted acepta cumplir con estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, no utilice nuestro sitio.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>2. Uso del Sitio</h2>
+                    <p>Este sitio está destinado para uso personal y no comercial. Usted acepta utilizar el sitio de manera legal y ética, sin:</p>
+                    <ul>
+                        <li>Violar cualquier ley aplicable</li>
+                        <li>Infringir derechos de propiedad intelectual</li>
+                        <li>Realizar actividades fraudulentas</li>
+                        <li>Distribuir malware o contenido dañino</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>3. Propiedad Intelectual</h2>
+                    <p>Todos los contenidos, logotipos, diseños y materiales en este sitio son propiedad de CineEstream o sus licenciantes y están protegidos por leyes de propiedad intelectual. No se permite su uso sin autorización expresa.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>4. Limitación de Responsabilidad</h2>
+                    <p>CineEstream no será responsable por:</p>
+                    <ul>
+                        <li>Daños directos, indirectos, incidentales o consecuentes</li>
+                        <li>Pérdida de datos o beneficios</li>
+                        <li>Interrupciones en el servicio</li>
+                    </ul>
+                    <p>El uso del sitio es bajo su propio riesgo.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>5. Enlaces a Terceros</h2>
+                    <p>Nuestro sitio puede contener enlaces a sitios web de terceros. No tenemos control sobre estos sitios y no somos responsables de su contenido o prácticas de privacidad.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>6. Modificaciones</h2>
+                    <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>7. Ley Aplicable</h2>
+                    <p>Estos términos se regirán e interpretarán de acuerdo con las leyes de Colombia, sin considerar sus disposiciones sobre conflictos de leyes.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>8. Contacto</h2>
+                    <p>Para preguntas sobre estos términos, contáctenos a través de nuestro formulario de contacto o en legal@cineestream.com.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+            <p>&copy; 2023 CineEstream. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

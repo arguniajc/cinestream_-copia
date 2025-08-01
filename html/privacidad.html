@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad | CineEstream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary: #ff6600;
+            --primary-dark: #e65c00;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --light: #f5f5f5;
+            --gray: #333333;
+            --light-gray: #aaaaaa;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(5, 5, 5, 0.9), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(5, 5, 5, 0.9);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--light);
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .privacy-container {
+            background-color: rgba(10, 10, 10, 0.8);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h3 {
+            color: var(--light);
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .section p, .section ul {
+            color: var(--light-gray);
+            margin-left: 1rem;
+        }
+
+        .section ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 102, 0, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .highlight-box {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-container {
+                padding: 1.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+            }
+            
+            .footer-links a {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Cine<span>Estream</span></a>
+            <nav>
+                <a href="#" class="btn">Volver al sitio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="privacy-container">
+                <h1>Política de Privacidad</h1>
+                <p class="last-updated">Última actualización: 15 de junio, 2023</p>
+                
+                <div class="section">
+                    <h2>1. Introducción</h2>
+                    <p>En CineEstream, respetamos su privacidad y nos comprometemos a proteger sus datos personales. Esta política explica cómo recopilamos, usamos y protegemos su información cuando visita nuestro sitio web.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>2. Información que Recopilamos</h2>
+                    <p>Podemos recopilar los siguientes tipos de información:</p>
+                    <ul>
+                        <li><strong>Información personal:</strong> Nombre, correo electrónico, teléfono cuando nos contacta o se registra.</li>
+                        <li><strong>Datos de uso:</strong> Cómo interactúa con nuestro sitio, páginas visitadas, tiempo de visita.</li>
+                        <li><strong>Datos técnicos:</strong> Dirección IP, tipo de navegador, dispositivo, sistema operativo.</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>3. Uso de su Información</h2>
+                    <p>Utilizamos su información para:</p>
+                    <ul>
+                        <li>Proveer y mantener nuestro servicio</li>
+                        <li>Notificarle sobre cambios en nuestro servicio</li>
+                        <li>Permitirle participar en funciones interactivas</li>
+                        <li>Proveer soporte al cliente</li>
+                        <li>Mejorar nuestro sitio web</li>
+                        <li>Prevenir fraudes y mejorar la seguridad</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>4. Cookies y Tecnologías Similares</h2>
+                    <p>Utilizamos cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro sitio y mantener cierta información.</p>
+                    <div class="highlight-box">
+                        <p>Puede configurar su navegador para rechazar todas las cookies o para indicar cuándo se envía una cookie. Sin embargo, si no acepta cookies, es posible que no pueda utilizar algunas partes de nuestro sitio.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>5. Compartir su Información</h2>
+                    <p>No vendemos ni alquilamos su información personal a terceros. Podemos compartir información con:</p>
+                    <ul>
+                        <li>Proveedores de servicios que nos ayudan a operar nuestro negocio</li>
+                        <li>Autoridades cuando lo requiera la ley</li>
+                        <li>En caso de fusión, adquisición o venta de activos</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>6. Seguridad de Datos</h2>
+                    <p>Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra accesos no autorizados, alteración, divulgación o destrucción.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>7. Sus Derechos de Privacidad</h2>
+                    <p>Dependiendo de su ubicación, puede tener derechos sobre sus datos personales, que incluyen:</p>
+                    <ul>
+                        <li>Acceder, corregir o eliminar su información</li>
+                        <li>Restringir o oponerse al procesamiento</li>
+                        <li>Solicitar una copia de sus datos</li>
+                        <li>Retirar su consentimiento</li>
+                    </ul>
+                    <p>Para ejercer estos derechos, contáctenos usando la información a continuación.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>8. Cambios a esta Política</h2>
+                    <p>Podemos actualizar nuestra Política de Privacidad periódicamente. Le notificaremos de cualquier cambio publicando la nueva política en esta página.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>9. Contacto</h2>
+                    <p>Para preguntas sobre esta política o sus derechos de privacidad, contáctenos en:</p>
+                    <p><strong>Email:</strong> privacidad@cineestream.com</p>
+                    <p><strong>Dirección:</strong> Cl. 14 Nte. #8N-35, Granada, Cali, Valle del Cauca, Colombia</p>
+                    <p><strong>Teléfono:</strong> +57 (318) 3546743</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+            <p>&copy; 2023 CineEstream. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
