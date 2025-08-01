@@ -1,264 +1,520 @@
 /* Variables CSS */
 :root {
-  --primary: #ff6600;
-  --primary-dark: #e65c00;
-  --dark: #0a0a0a;
-  --darker: #050505;
-  --light: #f5f5f5;
-  --gray: #333333;
-  --light-gray: #aaaaaa;
-  --transition: all 0.3s ease;
-  --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --primary: #ff6600;
+    --primary-dark: #e65c00;
+    --dark: #0a0a0a;
+    --darker: #050505;
+    --light: #f5f5f5;
+    --gray: #333333;
+    --light-gray: #aaaaaa;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Reset y estilos base */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--darker);
-  color: var(--light);
-  line-height: 1.6;
-  overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--darker);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2rem;
-  color: var(--primary);
-  position: relative;
-  padding-bottom: 0.5rem;
+    font-size: 2rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
 h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: var(--primary);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
 }
 
 p {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
 }
 
+button,
+.btn {
+    background: var(--primary);
+    color: var(--darker);
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Header y navegación */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    z-index: 1000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Oswald', sans-serif;
+}
+
+.logo span {
+    color: var(--light);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--light);
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Barra de búsqueda */
+.search-section {
+    background-color: var(--dark);
+    padding: 20px 0;
+    margin-top: 70px;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid var(--gray);
+    background: var(--darker);
+    color: var(--light);
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 15px 25px;
+}
+
+/* Sección de películas */
+.movies-section {
+    background: var(--darker);
+    padding: 40px 0 60px 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.movies-grid,
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 28px;
+    margin-top: 30px;
 }
 
+.movie-card,
 .card {
-  background: var(--gray);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
+    background: var(--dark);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
 }
 
+.movie-card:hover,
 .card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(229, 9, 20, 0.13);
 }
 
-.card .movie-poster {
-  position: relative;
-  height: 320px;
-  overflow: hidden;
-  background-color: var(--darker);
+.movie-poster {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--darker);
 }
 
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.movie-card:hover .movie-poster img,
 .card:hover .movie-poster img {
-  transform: scale(1.1);
-  filter: brightness(0.4);
+    transform: scale(1.1);
+    filter: brightness(0.8);
 }
 
-.card .card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: var(--transition);
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--transition);
 }
 
+.movie-card:hover .card-overlay,
 .card:hover .card-overlay {
-  opacity: 1;
+    opacity: 1;
 }
 
-.card .card-overlay .play-trailer-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.card-overlay button {
+    margin: 6px 0;
+    width: 80%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.card-overlay button:hover {
+    background: var(--primary-dark);
 }
 
+.card-info,
 .card-body {
-  padding: 15px;
-  text-align: center;
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card-body button, .card-overlay button {
-  background-color: var(--primary);
-  color: var(--darker);
-  padding: 10px 20px;
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.card-body button:hover, .card-overlay button:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+.card-info h3,
+.card-body h3 {
+    font-size: 1.15rem;
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card-body h3 {
-  margin-bottom: 10px;
-  color: var(--primary);
+    color: var(--primary);
 }
 
-/* Estilos del Modal */
+.card-info .movie-meta {
+    font-size: 0.95rem;
+    color: #ffd700;
+    margin-top: 4px;
+}
+
+.rating {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Botón admin */
+.admin-button-container {
+    margin-left: auto;
+}
+
+.btn-admin {
+    background-color: var(--primary);
+    color: var(--darker);
+    padding: 10px 20px;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: var(--transition);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-admin:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.admin-icon {
+    display: none;
+}
+
+/* Modales */
 .modal {
-  display: none; /* Oculto por defecto */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  animation: fadeIn 0.3s;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s;
 }
 
 .modal-content {
-  background-color: var(--dark);
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid var(--gray);
-  border-radius: 10px;
-  width: 90%;
-  max-width: 1200px; /* Ancho para mostrar varias tarjetas */
-  position: relative;
-  box-shadow: var(--shadow);
-  animation: slideIn 0.4s;
+    background-color: var(--dark);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.4s;
 }
 
 .close-modal {
-  color: var(--light-gray);
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
+    color: var(--light-gray);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .close-modal:hover,
 .close-modal:focus {
-  color: var(--primary);
-  text-decoration: none;
+    color: var(--primary);
+    text-decoration: none;
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideIn { from { transform: translateY(-50px); } to { transform: translateY(0); } }
-
-/* Estilos del Modal de Tráiler */
 .trailer-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000; /* Más alto que el otro modal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
 }
 
 .trailer-modal-content {
-  background: #000;
-  padding: 10px;
-  border-radius: 8px;
-  position: relative;
-  max-width: 900px;
-  width: 90%;
+    background: #000;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 900px;
+    width: 90%;
 }
 
 .close-trailer-modal {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-  transition: var(--transition);
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .close-trailer-modal:hover {
-  color: var(--primary);
+    color: var(--primary);
 }
 
 .video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }
 
 .video-wrapper iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Loader */
+.featured-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    width: 100%;
+    background: transparent;
+    animation: fadeIn 0.5s;
+}
+
+.loader-spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #222;
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+.loader-text {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .movies-grid,
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 18px;
+    }
+
+    .movie-poster {
+        height: 220px;
+    }
 }

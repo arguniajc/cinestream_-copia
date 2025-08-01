@@ -29,7 +29,7 @@
 
         <!-- Botón Admin a la derecha -->
         <div class="admin-button-container">
-          <a href="html/login.html" class="btn-admin">Admin</a>
+          <a href="./login.html" class="btn-admin">Admin</a>
         </div>
 
         <div class="hamburger">
@@ -43,13 +43,14 @@
   <section class="search-section">
     <div class="container">
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="Buscar películas por nombre, género, año..." />
+        <input type="text" id="search-input" placeholder="Buscar películas por nombre" />
         <button id="search-button">
           <i class="fas fa-search"></i> Buscar
         </button>
       </div>
     </div>
   </section>
+
   <!-- Sección de películas destacadas -->
   <section class="movies-section">
     <div class="container">
@@ -77,6 +78,17 @@
       </div>
     </div>
   </div>
+
+     <!-- Modal de información -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-details">
+                <!-- Aquí se insertará la información de la película -->
+            </div>
+        </div>
+    </div>
+
 
   <script src="../js/destacadas.js"></script>
 </body>

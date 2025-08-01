@@ -173,17 +173,31 @@ async function loadMovies() {
     featuredSecondaryContainer.innerHTML = "";
 
     // Películas destacadas
-    peliDestacadas.forEach((movie) => {
+    // Barajar las películas destacadas
+    const peliDestacadasAleatorias = peliDestacadas.sort(
+      () => Math.random() - 0.5
+    );
+
+    // Tomar solo 4 películas aleatorias
+    peliDestacadasAleatorias.slice(0, 4).forEach((movie) => {
       featuredMoviesContainer.appendChild(createMovieCard(movie));
     });
 
-    // Nuevos lanzamientos
-    peliLanzamientos.lanzamientos.forEach((movie) => {
+    // Nuevos lanzamientos aleatorios (máximo 4)
+    const lanzamientosAleatorios = peliLanzamientos.lanzamientos
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4);
+
+    lanzamientosAleatorios.forEach((movie) => {
       newReleasesContainer.appendChild(createMovieCard(movie));
     });
 
-    // Todas las películas
-    todasPeliculas.forEach((movie) => {
+    // Todas las películas aleatorias (máximo 8)
+    const todasAleatorias = todasPeliculas
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 8);
+
+    todasAleatorias.forEach((movie) => {
       featuredSecondaryContainer.appendChild(createMovieCard(movie));
     });
 
@@ -253,7 +267,7 @@ function createMovieCard(movie) {
             </div>
         </div>
     `;
-     observer.observe(card);
+  observer.observe(card);
   return card;
 }
 
@@ -279,35 +293,49 @@ function showMovieModal(movie) {
   const details = document.getElementById("modal-details");
 
   // Generar HTML con imagen_url para actores
-  const actoresHtml = movie.actores.map(a => `
+  const actoresHtml = movie.actores
+    .map(
+      (a) => `
     <div class="persona">
       <img src="${a.imagen_url}" alt="${a.nombre}" class="persona-img">
       <p>${a.nombre}</p>
-      <small>${a.personaje ? 'como ' + a.personaje : ''}</small>
+      <small>${a.personaje ? "como " + a.personaje : ""}</small>
     </div>
-  `).join("");
+  `
+    )
+    .join("");
 
   // Generar HTML con imagen_url para directores
-  const directoresHtml = movie.directores.map(d => `
+  const directoresHtml = movie.directores
+    .map(
+      (d) => `
     <div class="persona">
       <img src="${d.imagen_url}" alt="${d.nombre}" class="persona-img">
       <p>${d.nombre}</p>
     </div>
-  `).join("");
+  `
+    )
+    .join("");
 
   // Generar HTML con imagen_url para compañías
-  const companiasHtml = movie.companias.map(c => `
+  const companiasHtml = movie.companias
+    .map(
+      (c) => `
     <div class="persona">
       <img src="${c.imagen_url}" alt="${c.nombre}" class="persona-img">
       <p>${c.nombre}</p>
     </div>
-  `).join("");
+  `
+    )
+    .join("");
 
   const generos = movie.generos.map((g) => g.nombre).join(", ");
   const idiomas = movie.idiomas.map((i) => i.nombre).join(", ");
 
   details.innerHTML = `
-    <img src="${movie.poster_url}" alt="${movie.titulo_espanol}" class="poster-img">
+    <img src="${movie.poster_url}" alt="${
+    movie.titulo_espanol
+  }" class="poster-img">
     <h2>${movie.titulo_espanol}</h2>
     <div class="movie-meta">
       <span><i class="fas fa-calendar"></i> ${
@@ -347,7 +375,6 @@ function showMovieModal(movie) {
   modal.style.display = "block";
 }
 
-
 function closeMovieModal() {
   document.getElementById("movie-modal").style.display = "none";
 }
@@ -368,9 +395,18 @@ searchInput.addEventListener("input", () => {
 
   if (searchTerm) {
     // Filtrar películas que coincidan con el término
-    const peliculasFiltradas = todasPeliculas.filter((pelicula) =>
-      pelicula.titulo_espanol.toLowerCase().includes(searchTerm)
-    );
+    const peliculasFiltradas = todasPeliculas.filter((pelicula) => {
+      const titulo = pelicula.titulo_espanol?.toLowerCase() || "";
+      const generos =
+        pelicula.generos?.map((g) => g.nombre.toLowerCase()).join(", ") || "";
+      const anio = new Date(pelicula.fecha_estreno).getFullYear().toString();
+
+      return (
+        titulo.includes(searchTerm) ||
+        generos.includes(searchTerm) ||
+        anio.includes(searchTerm)
+      );
+    });
 
     // Mostrar solo sección "Todas", ocultar otras
     secciones.forEach((sec) => {
@@ -389,11 +425,12 @@ searchInput.addEventListener("input", () => {
         "<p>No se encontraron resultados.</p>";
     }
   } else {
-    // Mostrar todo desde la caché, sin recargar
+    // Mostrar secciones normales nuevamente
     secciones.forEach((sec) => (sec.style.display = "block"));
     seccionReproductor.style.display = "block";
 
-    todasPeliculas.forEach((movie) => {
+    // Solo mostrar las primeras 8 películas
+    todasPeliculas.slice(0, 8).forEach((movie) => {
       const card = createMovieCard(movie);
       featuredSecondaryContainer.appendChild(card);
     });
@@ -422,8 +459,6 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, observerOptions);
-
-
 
 function formatFecha(fecha) {
   if (!fecha) return "";
