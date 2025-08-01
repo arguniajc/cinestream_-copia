@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Películas por Género</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="../css/generoUI.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cine<span>Stream</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Películas</a></li>
+    </ul>
+    <div class="admin-button-container">
+      <a href="#" class="btn-admin"><span class="admin-text">Admin</span></a>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 100px;">
+    <section class="genres-section">
+      <h2>Géneros</h2>
+      <div id="genreButtons" class="card-grid"></div>
+    </section>
+
+    <section class="movies-section">
+      <h2 id="peliculas-title">Películas por Género</h2>
+      <div id="movieList" class="card-grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal para mostrar películas -->
+  <div id="moviesModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modal-title">Películas</h2>
+      <div id="modalMovieList" class="card-grid">
+        <!-- Las películas se cargarán aquí -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Tráiler (reutilizado de index.html) -->
+  <div id="trailer-modal" class="trailer-modal">
+    <div class="trailer-modal-content">
+      <span class="close-trailer-modal">&times;</span>
+      <div class="video-wrapper">
+        <iframe
+          id="modal-youtube-player"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/generoUI.js"></script>
+</body>
+</html>
