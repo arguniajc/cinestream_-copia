@@ -61,4 +61,12 @@ async function eliminar(id) {
   cargarIdiomas();
 }
 
+
+window.onload = () => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Debe iniciar sesión");
+    window.location.href = "login.html";
+  }
+};
 cargarIdiomas();

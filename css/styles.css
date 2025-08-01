@@ -1,4 +1,6 @@
-/* Variables CSS */
+/* ============================================= */
+/* Variables y Configuraciones Globales */
+/* ============================================= */
 :root {
   --primary: #ff6600;
   --primary-dark: #e65c00;
@@ -12,7 +14,9 @@
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Reset y estilos base */
+/* ============================================= */
+/* Reset y Estilos Base */
+/* ============================================= */
 * {
   margin: 0;
   padding: 0;
@@ -27,21 +31,29 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4 {
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* ============================================= */
+/* Tipografía */
+/* ============================================= */
+h1, h2, h3, h4 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
+h1 { font-size: 2.5rem; }
+h2 { 
   font-size: 2rem;
   color: var(--primary);
   position: relative;
@@ -62,6 +74,9 @@ p {
   margin-bottom: 1rem;
 }
 
+/* ============================================= */
+/* Elementos Comunes */
+/* ============================================= */
 img {
   max-width: 100%;
   display: block;
@@ -73,8 +88,7 @@ a {
   transition: var(--transition);
 }
 
-button,
-.btn {
+button, .btn {
   background: var(--primary);
   color: var(--darker);
   border: none;
@@ -89,25 +103,15 @@ button,
   display: inline-block;
 }
 
-button:hover,
-.btn:hover {
+button:hover, .btn:hover {
   background: var(--primary-dark);
   transform: translateY(-3px);
   box-shadow: var(--shadow);
 }
 
-.container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-section {
-  padding: 60px 0;
-}
-
-/* Header y navegación */
+/* ============================================= */
+/* Header y Navegación */
+/* ============================================= */
 header {
   position: fixed;
   top: 0;
@@ -123,12 +127,63 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  position: relative; 
+  position: relative;
 }
 
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: "Oswald", sans-serif;
+}
 
+.logo span {
+  color: var(--light);
+}
 
-/* Botón Admin al extremo derecho */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links li a {
+  color: var(--light);
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: var(--transition);
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Botón Admin */
 .admin-button-container {
   margin-left: auto;
 }
@@ -154,68 +209,21 @@ header {
   box-shadow: var(--shadow);
 }
 
-/* Ícono de usuario oculto por defecto en desktop */
 .admin-icon {
   display: none;
 }
 
-/* Responsive: en pantallas pequeñas mostrar solo ícono del admin */
-@media (max-width: 768px) {
-  .admin-text {
-    display: none;
-  }
-
-  .admin-icon {
-    display: inline;
-    font-size: 1.4rem;
-    color: var(--darker);
-  }
-
-  .btn-admin {
-    padding: 10px;
-    justify-content: center;
-  }
-
- 
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    color: var(--light);
-    font-size: 1.8rem;
-    margin-left: 10px;
-  }
-
-  .navbar {
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-}
-
-/* Hamburguesa oculta por defecto (si no hay media queries aún) */
-.hamburger {
-  display: none;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary);
-  font-family: "Oswald", sans-serif;
-}
-
-.logo span {
-  color: var(--light);
-}
-
-
-
+/* Hamburguesa */
 .hamburger {
   display: none;
   cursor: pointer;
   font-size: 1.5rem;
+  color: var(--light);
 }
 
-/* Barra de búsqueda */
+/* ============================================= */
+/* Sección de Búsqueda */
+/* ============================================= */
 .search-section {
   background-color: var(--dark);
   padding: 20px 0;
@@ -243,7 +251,9 @@ header {
   padding: 15px 25px;
 }
 
-/* Reproductor principal */
+/* ============================================= */
+/* Reproductor Principal */
+/* ============================================= */
 .player-section {
   background-color: var(--dark);
   padding-bottom: 40px;
@@ -252,8 +262,7 @@ header {
 .video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
-  /* Aspect ratio 16:9 */
+  padding-top: 56.25%; /* Aspect ratio 16:9 */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -295,9 +304,19 @@ header {
   gap: 5px;
 }
 
-/* Sección de películas */
+/* ============================================= */
+/* Sección de Películas */
+/* ============================================= */
 .movies-section {
   background-color: var(--darker);
+  transition: opacity 0.3s ease;
+}
+
+.movies-section.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
 }
 
 .section-header {
@@ -369,16 +388,6 @@ header {
   width: 80%;
 }
 
-.movie-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.movie-details h4 {
-  margin: 0;
-  padding: 0;
-  padding-bottom: -10px;
-}
 .card-info {
   padding: 15px;
 }
@@ -398,7 +407,20 @@ header {
   font-weight: bold;
 }
 
+.movie-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.movie-details h4 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: -10px;
+}
+
+/* ============================================= */
 /* Footer */
+/* ============================================= */
 footer {
   background-color: var(--dark);
   padding: 60px 0 20px;
@@ -463,146 +485,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-info {
-    grid-column: 1 / span 2;
-  }
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-links li a {
-    color: var(--light);
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: var(--transition);
-}
-
-.nav-links li a:hover {
-    color: var(--primary);
-}
-
-.nav-links li {
-    margin-left: 25px;
-}
-
-.nav-links a {
-    position: relative;
-    padding: 5px 0;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: var(--transition);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-  .movie-info {
-    grid-template-columns: 1fr;
-  }
-
-  .movies-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-}
-
-@media (max-width: 576px) {
-  .search-container {
-    flex-direction: column;
-  }
-
-  .movies-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-info {
-    grid-column: 1;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.7rem;
-  }
-}
-
-
-@keyframes modalIn {
-  from {
-    transform: translateY(-40px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.delay-1 {
-  animation-delay: 0.2s;
-}
-
-.delay-2 {
-  animation-delay: 0.4s;
-}
-
-.delay-3 {
-  animation-delay: 0.6s;
-}
-
+/* ============================================= */
+/* Modales */
+/* ============================================= */
 .trailer-modal {
   position: fixed;
   top: 0;
@@ -610,11 +495,11 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none; 
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 10px; 
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -640,7 +525,7 @@ footer {
 
 .trailer-modal .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; 
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 8px;
@@ -648,29 +533,14 @@ footer {
 
 .trailer-modal .video-wrapper iframe {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
 }
 
-
-.movies-section {
-  transition: opacity 0.3s ease;
-}
-.movies-section.hidden {
-  opacity: 0;
-  pointer-events: none;
-  height: 0;
-  overflow: hidden;
-}
-
-
-/*Modal*/
-/* Modal styles */
-
-
-/* Modal container */
+/* Modal de detalles */
 .modal {
   display: none;
   position: fixed;
@@ -684,7 +554,6 @@ footer {
   transition: opacity 0.3s ease;
 }
 
-/* Modal box */
 .modal-content {
   background: #1c1c1c;
   margin: 5% auto;
@@ -698,13 +567,6 @@ footer {
   animation: modalIn 0.3s ease;
 }
 
-/* Fade-in animation */
-@keyframes modalIn {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Close button */
 .close-modal {
   color: #fff;
   position: absolute;
@@ -719,7 +581,6 @@ footer {
   color: #e50914;
 }
 
-/* Poster image */
 #modal-details img.poster-img {
   width: 120px;
   border-radius: 8px;
@@ -729,16 +590,14 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Title */
 #modal-details h2 {
   margin-top: 0;
   font-size: 1.8rem;
-  color: #ffa500; /* Naranja o color destacado */
+  color: #ffa500;
   clear: both;
   padding-top: 8px;
 }
 
-/* Movie meta */
 #modal-details .movie-meta {
   margin-top: 12px;
   font-size: 0.95rem;
@@ -747,10 +606,9 @@ footer {
 #modal-details .movie-meta span {
   display: inline-block;
   margin-right: 12px;
-  color: #ffd700; /* dorado */
+  color: #ffd700;
 }
 
-/* Paragraph text */
 #modal-details p {
   color: #ccc;
   font-size: 0.95rem;
@@ -758,7 +616,6 @@ footer {
   line-height: 1.4;
 }
 
-/* Section headers (e.g., Director, Reparto) */
 #modal-details h4 {
   margin-top: 16px;
   margin-bottom: 8px;
@@ -768,7 +625,6 @@ footer {
   padding-bottom: 4px;
 }
 
-/* Personas (directores, actores, compañías) */
 .personas-container {
   display: flex;
   flex-wrap: wrap;
@@ -803,4 +659,108 @@ footer {
   display: block;
   color: #bbb;
   font-size: 0.75rem;
+}
+
+/* ============================================= */
+/* Animaciones */
+/* ============================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* ============================================= */
+/* Media Queries */
+/* ============================================= */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-info {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .admin-text {
+    display: none;
+  }
+  
+  .admin-icon {
+    display: inline;
+    font-size: 1.4rem;
+    color: var(--darker);
+  }
+  
+  .btn-admin {
+    padding: 10px;
+    justify-content: center;
+  }
+  
+  .movie-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .nav-links {
+    display: none; /* Ocultar navegación en móvil */
+  }
+}
+
+@media (max-width: 576px) {
+  .search-container {
+    flex-direction: column;
+  }
+  
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-info {
+    grid-column: 1;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.7rem;
+  }
 }

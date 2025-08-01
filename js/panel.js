@@ -1,6 +1,6 @@
 function cerrarSesion() {
   localStorage.removeItem('token');
-  window.location.href = 'login.html';
+  window.location.href = '../index.html';
 }
 
 window.onload = () => {

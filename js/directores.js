@@ -88,4 +88,12 @@ function editar(id, nombre, imagen_url) {
   }
 }
 
+window.onload = () => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Debe iniciar sesión");
+    window.location.href = "login.html";
+  }
+};
+
 cargarDirectores();
