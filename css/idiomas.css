@@ -1,3 +1,6 @@
+/* =======================
+   VARIABLES
+======================= */
 :root {
   --primary: #ff6600;
   --primary-dark: #e65c00;
@@ -10,12 +13,18 @@
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* =======================
+   RESET
+======================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =======================
+   BASE
+======================= */
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--darker);
@@ -23,43 +32,31 @@ body {
   padding: 2rem;
 }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-}
-
 h2, h3 {
-  font-family: 'Oswald', sans-serif;
   color: var(--primary);
+  font-family: 'Oswald', sans-serif;
   margin-bottom: 1rem;
-  text-transform: uppercase;
   position: relative;
+  text-transform: uppercase;
 }
 
 h2::after, h3::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 50px;
-  height: 3px;
   background-color: var(--primary);
-}
-
-.form-idioma {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 2rem;
+  bottom: -8px;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 50px;
 }
 
 input {
-  padding: 10px;
   background: #222;
-  color: var(--light);
   border: none;
   border-radius: 4px;
+  color: var(--light);
   font-size: 1rem;
+  padding: 10px;
 }
 
 input:focus {
@@ -68,14 +65,14 @@ input:focus {
 
 button {
   background-color: var(--primary);
-  color: var(--darker);
-  padding: 12px;
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
   border: none;
   border-radius: 4px;
+  color: var(--darker);
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  padding: 12px;
+  text-transform: uppercase;
   transition: var(--transition);
 }
 
@@ -84,44 +81,122 @@ button:hover {
   box-shadow: var(--shadow);
 }
 
+/* =======================
+   ESTRUCTURA
+======================= */
+.container {
+  margin: auto;
+  max-width: 600px;
+}
+
+/* =======================
+   FORMULARIOS
+======================= */
+.form-idioma {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+/* =======================
+   COMPONENTES: CARD
+======================= */
 .card {
   background-color: var(--gray);
-  padding: 15px;
   border-radius: 6px;
-  margin: 10px 0;
   box-shadow: var(--card-shadow);
+  margin: 10px 0;
+  padding: 15px;
 }
 
 .card strong {
-  font-weight: bold;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .card-buttons {
-  margin-top: 10px;
   display: flex;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .card-buttons button {
   flex: 1;
 }
 
+/* =======================
+   COMPONENTES: MENSAJE
+======================= */
 .mensaje {
-  margin-top: 10px;
-  font-weight: bold;
   color: var(--primary);
+  font-weight: bold;
+  margin-top: 10px;
 }
-#logoutBtn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 18px;
-  background-color: #dc3545;
+
+/* =======================
+   BOTONES GENERALES
+======================= */
+.btn-volver,
+.btn-cerrar {
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  height: 40px;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-volver {
+  background-color: var(--primary);
+  color: black;
+}
+
+.btn-volver:hover {
+  background-color: var(--primary-dark);
   color: white;
+}
+
+.btn-cerrar {
+  background-color: #d9534f;
+  color: white;
+}
+
+.btn-cerrar:hover {
+  background-color: #c9302c;
+}
+
+/* =======================
+   BARRA SUPERIOR
+======================= */
+.top-bar {
+  align-items: center;
+  background-color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+/* =======================
+   BOTÓN CERRAR SESIÓN FIJO
+======================= */
+#logoutBtn {
+  background-color: #dc3545;
   border: none;
   border-radius: 6px;
+  color: white;
   cursor: pointer;
+  padding: 10px 18px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
   transition: var(--transition);
 }
 

@@ -12,7 +12,15 @@
   <link rel="stylesheet" href="../css/generos.css">
 </head>
 <body>
- <button id="logoutBtn" onclick="cerrarSesion()">Cerrar Sesión</button>
+   <div class="top-bar">
+      <button class="btn-volver" onclick="window.history.back()">
+        ⟵ Volver
+      </button>
+      <button id="logoutBtn" class="btn-cerrar" onclick="cerrarSesion()">
+        Cerrar Sesión
+      </button>
+    </div>
+
 <main class="container">
   <h2>Géneros</h2>
 

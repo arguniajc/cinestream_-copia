@@ -1,165 +1,247 @@
+/* ==========================
+   VARIABLES
+========================== */
 :root {
-    --primary: #ff6600;
-    --primary-dark: #e65c00;
-    --dark: #0a0a0a;
-    --darker: #050505;
-    --light: #f5f5f5;
-    --gray: #333333;
-    --light-gray: #aaaaaa;
-    --transition: all 0.3s ease;
-    --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --dark: #0a0a0a;
+  --darker: #050505;
+  --gray: #333333;
+  --light: #f5f5f5;
+  --light-gray: #aaaaaa;
+  --primary: #ff6600;
+  --primary-dark: #e65c00;
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s ease;
 }
 
+/* ==========================
+   RESET
+========================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ==========================
+   BASE
+========================== */
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--darker);
-    color: var(--light);
-    line-height: 1.6;
-    padding: 2rem;
+  background-color: var(--darker);
+  color: var(--light);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
 h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    color: var(--primary);
-    position: relative;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+  color: var(--primary);
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  text-transform: uppercase;
 }
 
 h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--primary);
+  background: var(--primary);
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 60px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.form-compania {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.form-compania input {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    background: #222;
-    color: var(--light);
-}
-
-.form-compania input:focus {
-    outline: 2px solid var(--primary);
-}
-
-.form-compania button {
-    padding: 12px 20px;
-    background-color: var(--primary);
-    color: var(--darker);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.form-compania button:hover {
-    background-color: var(--primary-dark);
-    box-shadow: var(--shadow);
-    transform: translateY(-2px);
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .mensaje {
-    font-weight: bold;
-    color: var(--primary);
-    margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
+/* ==========================
+   FORMULARIO
+========================== */
+.form-compania {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-compania input {
+  background: #222;
+  border: none;
+  border-radius: 4px;
+  color: var(--light);
+  flex: 1;
+  font-size: 1rem;
+  padding: 12px;
+}
+
+.form-compania input:focus {
+  outline: 2px solid var(--primary);
+}
+
+.form-compania button {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  color: var(--darker);
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.form-compania button:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   TABLAS
+========================== */
 .tabla-responsive {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--gray);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
+  background-color: var(--gray);
+  border-collapse: collapse;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  width: 100%;
 }
 
 th, td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #222;
-    font-size: 0.95rem;
+  border-bottom: 1px solid #222;
+  font-size: 0.95rem;
+  padding: 12px;
+  text-align: center;
 }
 
 th {
-    background-color: var(--dark);
-    color: var(--primary);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.95rem;
+  background-color: var(--dark);
+  color: var(--primary);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
 }
 
 td img {
-    max-width: 100px;
-    border-radius: 4px;
+  border-radius: 4px;
+  max-width: 100px;
 }
 
+/* ==========================
+   BOTONES GENERALES
+========================== */
 button {
-    background-color: var(--primary);
-    color: var(--darker);
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.85rem;
-    margin: 2px;
-    cursor: pointer;
-    transition: var(--transition);
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  color: var(--darker);
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  margin: 2px;
+  padding: 8px 12px;
+  transition: var(--transition);
 }
 
 button:hover {
-    background-color: var(--primary-dark);
-    box-shadow: var(--shadow);
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow);
 }
 
+/* ==========================
+   BOTÓN CERRAR SESIÓN (FLOTANTE)
+========================== */
 #logoutBtn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 18px;
   background-color: #dc3545;
-  color: white;
   border: none;
   border-radius: 6px;
+  color: white;
   cursor: pointer;
+  padding: 10px 18px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
   transition: var(--transition);
 }
 
 #logoutBtn:hover {
   background-color: #b02a37;
+}
+
+/* ==========================
+   BARRA SUPERIOR
+========================== */
+.top-bar {
+  align-items: center;
+  background-color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+/* ==========================
+   BOTÓN VOLVER
+========================== */
+.btn-volver {
+  align-items: center;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  height: 40px;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-volver:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* ==========================
+   BOTÓN CERRAR SESIÓN (BARRA)
+========================== */
+.btn-cerrar {
+  align-items: center;
+  background-color: #d9534f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  height: 40px;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-cerrar:hover {
+  background-color: #c9302c;
 }

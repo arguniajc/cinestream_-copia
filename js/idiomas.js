@@ -61,6 +61,10 @@ async function eliminar(id) {
   cargarIdiomas();
 }
 
+function cerrarSesion() {
+  localStorage.removeItem('token');
+  window.location.href = '../index.html';
+}
 
 window.onload = () => {
   const token = localStorage.getItem("token");

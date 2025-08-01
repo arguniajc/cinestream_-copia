@@ -1,3 +1,6 @@
+/* ================================
+   Variables Globales
+================================== */
 :root {
   --primary: #ff6600;
   --primary-dark: #e65c00;
@@ -9,6 +12,9 @@
   --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* ================================
+   Reset y Configuración General
+================================== */
 * {
   margin: 0;
   padding: 0;
@@ -23,8 +29,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-top: 0;
 }
 
+/* ================================
+   Contenedor de Login
+================================== */
 .login-container {
   background-color: var(--dark);
   padding: 30px;
@@ -34,6 +44,9 @@ body {
   max-width: 400px;
 }
 
+/* ================================
+   Título
+================================== */
 h2 {
   font-family: 'Oswald', sans-serif;
   text-align: center;
@@ -41,6 +54,9 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* ================================
+   Etiquetas y Entradas
+================================== */
 label {
   display: block;
   margin-top: 15px;
@@ -49,29 +65,32 @@ label {
 
 input {
   width: 100%;
-  padding: 10px;
   margin-top: 5px;
+  padding: 10px;
   background-color: var(--gray);
+  color: var(--light);
   border: none;
   border-radius: 4px;
-  color: var(--light);
 }
 
 input:focus {
   outline: 2px solid var(--primary);
 }
 
+/* ================================
+   Botón Principal
+================================== */
 button {
   width: 100%;
+  margin-top: 20px;
+  padding: 12px;
   background-color: var(--primary);
   color: var(--dark);
   border: none;
-  padding: 12px;
+  border-radius: 4px;
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
-  margin-top: 20px;
-  border-radius: 4px;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -81,8 +100,43 @@ button:hover {
   box-shadow: var(--shadow);
 }
 
+/* ================================
+   Mensaje de Error
+================================== */
 .error {
   color: red;
   text-align: center;
   margin-top: 15px;
+}
+
+/* ================================
+   Botón "← Volver" flotante
+================================== */
+.btn-volver {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 3cm;
+  padding: 4px 8px;
+  background-color: var(--primary-dark);
+  color: black;
+  font-size: 14px;
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-volver:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* ================================
+   Barra superior (si se usa)
+================================== */
+.top-bar {
+  display: none;
 }

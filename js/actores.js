@@ -86,6 +86,11 @@ function editar(id, nombre, imagen_url) {
   }
 }
 
+
+function cerrarSesion() {
+  localStorage.removeItem('token');
+  window.location.href = '../index.html';
+}
 window.onload = () => {
   const token = localStorage.getItem("token");
   if (!token) {

@@ -1,3 +1,6 @@
+/* ------------------------------
+   VARIABLES
+------------------------------ */
 :root {
   --primary: #ff6600;
   --primary-dark: #e65c00;
@@ -10,12 +13,18 @@
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* ------------------------------
+   RESETEO BÁSICO
+------------------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ------------------------------
+   ESTILOS GENERALES
+------------------------------ */
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--darker);
@@ -28,6 +37,9 @@ body {
   margin: auto;
 }
 
+/* ------------------------------
+   TITULOS
+------------------------------ */
 h2, h3 {
   font-family: 'Oswald', sans-serif;
   color: var(--primary);
@@ -36,7 +48,8 @@ h2, h3 {
   position: relative;
 }
 
-h2::after, h3::after {
+h2::after,
+h3::after {
   content: '';
   position: absolute;
   bottom: -8px;
@@ -46,6 +59,9 @@ h2::after, h3::after {
   background-color: var(--primary);
 }
 
+/* ------------------------------
+   FORMULARIO
+------------------------------ */
 .form-genero {
   display: flex;
   flex-direction: column;
@@ -66,6 +82,9 @@ input:focus {
   outline: 2px solid var(--primary);
 }
 
+/* ------------------------------
+   BOTONES GENERALES
+------------------------------ */
 button {
   background-color: var(--primary);
   color: var(--darker);
@@ -84,6 +103,9 @@ button:hover {
   box-shadow: var(--shadow);
 }
 
+/* ------------------------------
+   TARJETAS
+------------------------------ */
 .card {
   background-color: var(--gray);
   padding: 15px;
@@ -107,11 +129,79 @@ button:hover {
   flex: 1;
 }
 
+/* ------------------------------
+   MENSAJE
+------------------------------ */
 .mensaje {
   margin-top: 10px;
   font-weight: bold;
   color: var(--primary);
 }
+
+/* ------------------------------
+   BARRA SUPERIOR
+------------------------------ */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------
+   BOTÓN VOLVER
+------------------------------ */
+.btn-volver {
+  background-color: var(--primary);
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.btn-volver:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* ------------------------------
+   BOTÓN CERRAR SESIÓN
+------------------------------ */
+.btn-cerrar {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.btn-cerrar:hover {
+  background-color: #c9302c;
+}
+
+/* ------------------------------
+   BOTÓN LOGOUT (INDIVIDUAL)
+------------------------------ */
 #logoutBtn {
   position: absolute;
   top: 20px;
