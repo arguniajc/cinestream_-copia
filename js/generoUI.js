@@ -15,11 +15,11 @@ const PELICULAS_POR_GENERO_API = 'https://cinestream-backend.onrender.com/api/pe
 
 // Imágenes de ejemplo por género (puedes cambiarlas)
 const generoImages = {
-  1: 'https://i.ibb.co/xD4S0HD/drama.jpg',
-  2: 'https://i.ibb.co/FmcRrxW/accion.jpg',
-  3: 'https://i.ibb.co/Z1S6Lb4/comedia.jpg',
-  4: 'https://i.ibb.co/vdH0yVF/terror.jpg',
-  5: 'https://i.ibb.co/Bs6LkPP/romance.jpg',
+  1: 'https://picsum.photos/700/400?random',
+  2: 'https://picsum.photos/700/400?random',
+  3: 'https://picsum.photos/700/400?random',
+  4: 'https://picsum.photos/700/400?random',
+  5: 'https://picsum.photos/700/400?random',
 };
 
 async function cargarGeneros() {
@@ -29,7 +29,7 @@ async function cargarGeneros() {
 
     genreContainer.innerHTML = generos.map(genero => `
       <div class="card" data-id="${genero.id}" data-nombre="${genero.nombre}">
-        <img src="${generoImages[genero.id] || 'https://via.placeholder.com/300x200'}" alt="${genero.nombre}">
+        <img src="${generoImages[genero.id] || 'https://picsum.photos/700/400?random'}" alt="${genero.nombre}">
         <div class="card-body">
           <h3>${genero.nombre}</h3>
           <button class="ver-peliculas-btn">Ver películas</button>
