@@ -139,7 +139,7 @@ header {
 }
 
 .nav-links {
-  display: flex;
+   display: flex;
   gap: 30px;
   list-style: none;
   margin: 0 auto;
@@ -344,6 +344,7 @@ header {
 /* Botón admin estilo base */
 .admin-button-container {
   margin-left: auto;
+   margin-right: 20px;
 }
 
 .btn-admin {
@@ -675,4 +676,37 @@ footer {
   border-top: 1px solid var(--gray);
   color: var(--light-gray);
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--light);
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .nav-links {
+     position: fixed;
+    top: 70px;
+    left: -100%;
+    transform: none; 
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: left 0.3s ease;
+  }
+
+.nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
 }

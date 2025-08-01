@@ -184,26 +184,45 @@ function showTrailerModal(videoId) {
 
 // Cierra el modal del tráiler
 document.addEventListener("DOMContentLoaded", () => {
+    // Cargar películas destacadas
     loadFeaturedMovies();
 
+    // Modal del tráiler
     const modal = document.getElementById("trailer-modal");
-    if (modal) {
+    const trailerPlayer = document.getElementById("modal-youtube-player");
+
+    if (modal && trailerPlayer) {
         modal.addEventListener("click", (e) => {
             if (e.target === modal || e.target.classList.contains("close-trailer-modal")) {
                 modal.style.display = "none";
-                document.getElementById("modal-youtube-player").src = "";
+                trailerPlayer.src = "";
             }
         });
     }
 
+    // Activar menú hamburguesa
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("nav-active");
+        });
+    }
+
     // Eventos de búsqueda
-    searchInput.addEventListener("input", filtrarDestacadas);
-    searchButton.addEventListener("click", filtrarDestacadas);
-    searchInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-            filtrarDestacadas();
-        }
-    });
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+
+    if (searchInput && searchButton) {
+        searchInput.addEventListener("input", filtrarDestacadas);
+        searchButton.addEventListener("click", filtrarDestacadas);
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                filtrarDestacadas();
+            }
+        });
+    }
 });
 
 // Muestra detalles (puedes personalizarla)
@@ -311,4 +330,15 @@ document.addEventListener("keydown", function (e) {
             document.getElementById("modal-youtube-player").src = "";
         }
     }
+});
+// Funcionalidad del botón hamburguesa
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("nav-active"); // alterna la clase para mostrar u ocultar
+    });
+  }
 });

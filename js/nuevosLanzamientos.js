@@ -203,7 +203,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // ✅ AQUI VA EL CÓDIGO DEL BOTÓN HAMBURGUESA
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Opcional: cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+  }
 });
+
 
 function showMovieDetails(movie) {
   try {
@@ -339,3 +357,4 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+
