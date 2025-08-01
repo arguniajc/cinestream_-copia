@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Compañías - CineStream</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/companias.css">
+</head>
+<body>
+
+<main class="container">
+    <h2>Gestor de Compañías</h2>
+
+    <form id="formCompania" class="form-compania">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="url" id="imagenUrl" placeholder="URL de la imagen" required>
+        <button type="submit">Agregar Compañía</button>
+    </form>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <div class="tabla-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCompanias"></tbody>
+        </table>
+    </div>
+</main>
+
+<script src="../js/companias.js"></script>
+
+</body>
+</html>

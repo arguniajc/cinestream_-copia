@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Géneros - CineStream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="../css/generos.css">
+</head>
+<body>
+
+<main class="container">
+  <h2>Géneros</h2>
+
+  <form id="formGenero" class="form-genero">
+    <input type="hidden" id="generoId">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <p id="mensaje" class="mensaje"></p>
+
+  <hr>
+
+  <h3>Listado de Géneros</h3>
+  <div id="listaGeneros"></div>
+</main>
+
+<script src="../js/generos.js"></script>
+</body>
+</html>

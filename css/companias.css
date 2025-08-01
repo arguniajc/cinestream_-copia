@@ -1,0 +1,148 @@
+:root {
+    --primary: #ff6600;
+    --primary-dark: #e65c00;
+    --dark: #0a0a0a;
+    --darker: #050505;
+    --light: #f5f5f5;
+    --gray: #333333;
+    --light-gray: #aaaaaa;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--darker);
+    color: var(--light);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-compania {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-compania input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #222;
+    color: var(--light);
+}
+
+.form-compania input:focus {
+    outline: 2px solid var(--primary);
+}
+
+.form-compania button {
+    padding: 12px 20px;
+    background-color: var(--primary);
+    color: var(--darker);
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-compania button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.mensaje {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: var(--dark);
+    color: var(--primary);
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+td img {
+    max-width: 100px;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--darker);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    margin: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow);
+}

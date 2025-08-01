@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/panel.css">
+</head>
+<body>
+
+    <button id="logoutBtn" onclick="cerrarSesion()">Cerrar Sesión</button>
+
+    <h1>Panel de Administración</h1>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Películas</h3>
+            <p>Ver, agregar, editar y eliminar películas.</p>
+            <button onclick="location.href='crud_peliculas.html'">Gestionar Películas</button>
+        </div>
+
+        <div class="card">
+            <h3>Actores</h3>
+            <p>Ver, agregar, editar y eliminar actores.</p>
+            <button onclick="location.href='actores.html'">Gestionar Actores</button>
+        </div>
+
+        <div class="card">
+            <h3>Directores</h3>
+            <p>Ver, agregar, editar y eliminar directores.</p>
+            <button onclick="location.href='directores.html'">Gestionar Directores</button>
+        </div>
+
+        <div class="card">
+            <h3>Compañías</h3>
+            <p>Ver, agregar, editar y eliminar compañías.</p>
+            <button onclick="location.href='companias.html'">Gestionar Compañías</button>
+        </div>
+
+        <div class="card">
+            <h3>Géneros</h3>
+            <p>Ver, agregar, editar y eliminar géneros.</p>
+            <button onclick="location.href='generos.html'">Gestionar Géneros</button>
+        </div>
+
+        <div class="card">
+            <h3>Idiomas</h3>
+            <p>Ver, agregar, editar y eliminar idiomas.</p>
+            <button onclick="location.href='idiomas.html'">Gestionar Idiomas</button>
+        </div>
+    </div>
+
+    <script src="../js/panel.js"></script>
+</body>
+</html>
