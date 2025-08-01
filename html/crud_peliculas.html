@@ -8,7 +8,14 @@
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <button id="logoutBtn" onclick="cerrarSesion()">Cerrar Sesión</button>
+    <div class="top-bar">
+      <button class="btn-volver" onclick="window.history.back()">
+        ⟵ Volver
+      </button>
+      <button id="logoutBtn" class="btn-cerrar" onclick="cerrarSesion()">
+        Cerrar Sesión
+      </button>
+    </div>
     <div class="container">
       <h1>Gestión de Películas</h1>
 
